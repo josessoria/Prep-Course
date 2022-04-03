@@ -1,0 +1,8 @@
+Variable = Es es una cajita en donde podres guardar cosas
+strings = es un texto que está entre comillas
+funcion = es una forma mas facil de llamar a un conjunto de acciones 
+argumentos = podemos elegir cuales son las acciones a las cuales vamos a llamar
+return = al hacer que funcione ese conjunto de acciones va a devolver algo
+declaraciones if= si se cumple con unas condiciones, se va a realizar una acciones
+valores boleanos = son datos que quieren decir si algo es falso o verdadero
+
