@@ -1,16 +1,31 @@
 // No cambies los nombres de las funciones.
 
+const { defaults } = require("markdown-it-highlightjs")
+
 function obtenerMayor(x, y) {
   // "x" e "y" son números enteros (int).
   // Devuelve el número más grande
   // Si son iguales, devuelve cualquiera de los dos
   // Tu código:
+  numeros = Math.max(x,y)
+  return numeros
+
 }
 
 function mayoriaDeEdad(edad) {
   //Determinar si la persona según su edad puede ingresar a un evento.
   //Si tiene 18 años ó más, devolver --> "Allowed"
   //Si es menor, devolver --> "Not allowed"
+
+  let allowed = "Allowed"
+  let not = "Not allowed"
+
+  if (edad >= 18){
+    return allowed
+  } else if (edad < 18){
+    return not
+  }
+
 }
   
 function conection(status) {
@@ -19,6 +34,20 @@ function conection(status) {
   //Cuando el estado es igual a 2, el usuario está "Away"
   //De lo contrario, presumimos que el usuario está "Offline"
   //Devolver el estado de conexión de usuario en cada uno de los casos.
+
+let online = "Online"
+let away = "Away"
+let offline = "Offline"
+
+
+  if (status == 1){
+    return online
+  } else if (status == 2){
+    return away
+  }else{
+    return offline
+  }
+
 }
 
 function saludo(idioma) {
@@ -28,6 +57,20 @@ function saludo(idioma) {
   // Si "idioma" es "ingles", devuelve "Hello!"
   // Si "idioma" no es ninguno de los anteiores o es `undefined` devuelve "Hola!"
   // Tu código:
+  let guten = "Guten Tag!"
+  let ni = "Ni Hao!"
+  let hello = "Hello!"
+  let hola = "Hola!"
+
+  if (idioma == "aleman"){
+    return guten
+  } else if (idioma == "mandarin"){
+    return ni
+  } else if (idioma == "ingles"){
+    return hello
+  } else if (idioma == undefined || idioma !== "aleman" || idioma !== "mandarin" || idioma !== "ingles"){
+    return hola
+  }
 }
 
 function colors(color) {
@@ -38,18 +81,63 @@ function colors(color) {
   //En caso que el color recibido sea "orange", devuleve --> "This is orange"
   //Caso default: devuelve --> "Color not found"
   //Usar el statement Switch.
+
+  let blue = "This is blue"
+  let red = "This is red"
+  let green = "This is green"
+  let orange = "This is orange"
+  notfound = "Color not found"
+
+
+  switch(color){
+    case "blue":
+      return blue;
+      break
+    case "red":
+      return red
+      break
+    case "green":
+      return green
+      break
+    case "orange":
+      return orange
+      break
+    default:
+      return notfound
+  }
 }
+
 
 function esDiezOCinco(numero) {
   // Devuelve "true" si "numero" es 10 o 5
   // De lo contrario, devuelve "false"
   // Tu código:
+
+  switch(numero){
+    case 10:
+      return true
+      break
+    case 5:
+      return true
+      break
+    default:
+      return false
+  }
+
 }
 
 function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
+
+  if (numero > 20 && numero < 50 ){
+    return true
+  }
+  else{
+    return false
+  }
+
 }
 
 function esEntero(numero) {
@@ -60,6 +148,14 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
+
+  hechisimo = Math.floor(numero)
+  if (numero == hechisimo){
+    return true
+  }
+  else{
+    return false
+  }
 }
 
 function fizzBuzz(numero) {
@@ -67,6 +163,31 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
+  fi = "fizz"
+  bu = "buzz"
+  fibu = "fizzbuzz"
+
+  verificaciao = numero % 3
+  verificaciao2 = numero % 5
+  
+
+  if (verificaciao == 0 && verificaciao2 == 0){
+    return fibu
+  }
+
+  else if (verificaciao == 0){
+    return fi
+  }
+  else if (verificaciao2 == 0){
+    return bu
+  }
+
+  else{
+    return numero
+  }
+
+  
+
 }
 
 function operadoresLogicos(num1, num2, num3) {
@@ -76,6 +197,36 @@ function operadoresLogicos(num1, num2, num3) {
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
+
+  respuesta1 = "Número 1 es mayor y positivo"
+  respuesta2 = "Hay negativos"
+  respuesta3 = "Error"
+
+
+
+
+  if (num1 < 0 || num2 < 0 || num3 < 0){
+    return respuesta2
+  }
+
+  if (num1 == 0 || num2 == 0 || num3 == 0 ){
+    return respuesta3
+  } 
+
+  if (num1 > num2 && num1 > num3 && num1 > 0 ){
+    return respuesta1
+  }
+
+
+  if (num3 > num1 && num3 > num2){
+    num3++
+    return num3
+  }
+
+  else{
+    return false
+  }
+
 }
 
 function esPrimo(numero) {
